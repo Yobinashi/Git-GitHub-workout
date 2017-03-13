@@ -48,7 +48,15 @@ git clone origin master
 # récupérer en local les dernières modifications du repo GitHub:
 git pull origin master
 
-# 
+# Pour créer une nouvelle branche, il vous suffit d'ajouter le nom de la branche à créer à la suite de la commande précédente:
+git branch nouvelle-branche
 
+# Pour vous placer dans une branche à l'intérieur de votre repository:
+git checkout nouvelle-branche
+
+ou bien 
+
+# regrouper ces deux opérations en une seule commande: 
+git checkout -b ma-branche
 
 
