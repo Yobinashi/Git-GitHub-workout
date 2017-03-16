@@ -36,4 +36,11 @@ Entrainement au maniement de Git et GitHub
 --> TROISIEME PARTIE - Collaborez et maîtrisez votre historique -
 
 # Créer des branches.
-# 
+# Fusionner des branches.
+# Résoudre un conflit après fusion de 2 branches.
+# Sur un projet collaboratif, retrouver qui a fait une modification.
+# Ignorer des fichiers (afin de ne JAMAIS versionner une variable de configuration).
+# Éviter des commits superflus.
+# Contribuer à des projets open source.
+
+--> FIN
