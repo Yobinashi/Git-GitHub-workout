@@ -6,11 +6,11 @@
 
 
 
-# configuation du fichier .gitconfig
+# Configuation du fichier .gitconfig
 git config --global user.name "Votre nom ou pseudo"
 git config --global user.email "Votre@email.com"
 
-# activer un dossier comme repository Git -> se placer dans ce dossier avec le Terminal puis d'utiliser la commande:
+# Activer un dossier comme repository Git -> se placer dans ce dossier avec le Terminal puis d'utiliser la commande:
 git init
 
 # Git génère un index de tous les fichiers dont il doit faire le suivi. Lorsque vous créez un fichier dans un repository, vous devez donc l'ajouter à 
@@ -21,31 +21,31 @@ git add README.txt  /  (ajouter tous les fichiers dans le répertoire courant en
 lui envoyer un message décrivant les modifications effectuées.
 git commit -m "Ajout du fichier README.txt"
 
-# afficher la liste de tous les commits que vous avez réalisés:
+# Afficher la liste de tous les commits que vous avez réalisés:
 git log
 
-## si vous ne faites que mettre à jour un fichier que vous aviez déjà ajouté à l'index, vous pouvez condenser ces deux étapes de la façon suivante: 
+## Si vous ne faites que mettre à jour un fichier que vous aviez déjà ajouté à l'index, vous pouvez condenser ces deux étapes de la façon suivante: 
 git commit -a -m "Ajout des consignes exercices dans README.TXT"
 
-# se positionner sur un commit donné de votre historique:
+# Se positionner sur un commit donné de votre historique:
 git checkout SHADuCommit
 
 # Pour revenir à votre branche principale (au commit le plus récent).
 git checkout master
 
-# si vous voulez modifier le message de votre dernier commit:
+# Si vous voulez modifier le message de votre dernier commit:
 git commit --amend -m "Votre nouveau message"
 
 # On ne peut pas vraiment "supprimer" un commit, vous pouvez "revert" un commit, c'est-à-dire créer un nouveau commit qui fait l'inverse du précédent:
 git revert SHADuCommit
 
-# copier un repository sur votre machine, à partir de GitHub:
+# Copier un repository sur votre machine, à partir de GitHub:
 git clone lienFourniParGitHub  /  exemple: git clone https://github.com/facebook/react.git
 
-# synchroniser les modifications que vous faites dans votre repo sur votre machine avec votre repo sur GitHub:
+# Synchroniser les modifications que vous faites dans votre repo sur votre machine avec votre repo sur GitHub:
 git clone origin master
 
-# récupérer en local les dernières modifications du repo GitHub:
+# Récupérer en local les dernières modifications du repo GitHub:
 git pull origin master
 
 # Pour créer une nouvelle branche, il vous suffit d'ajouter le nom de la branche à créer à la suite de la commande précédente:
@@ -56,7 +56,38 @@ git checkout nouvelle-branche
 
 ou bien 
 
-# regrouper ces deux opérations en une seule commande: 
+# Regrouper ces deux opérations en une seule commande: 
 git checkout -b ma-branche
 
+# Fusionner des branches:
+- on se positionne dans la branche que l'on veut mettre à jour --> git checkout brancheA
+- puis on fusionne avec la branche, qui contient les données --> git merge brancheB
 
+# Pour retrouver qui a modifié une ligne précise de code dans un projet:
+git blame nomdufichier.extension
+(Cette commande liste toutes les modifications qui ont été faites sur le fichier ligne par ligne. À chaque modification est associé le début du sha du 
+ commit correspondant)
+
+# Pour retrouver pourquoi cette modification a été faite, utiliser la commande git show qui vous renvoie directement les détails du commit recherché en 
+  saisissant le début de son sha : 
+git show 05b1233
+
+# Pour ignorer certains fichiers, afin de ne JAMAIS versionner une variable de configuration. Versionner une telle variable peut conduire à une large 
+  faille de sécurité, surtout si on met le code en ligne sur GitHub.
+  Créez le fichier .gitignore pour y lister les fichiers que vous ne voulez pas versionner dans Git. Listez ces fichiers ligne par ligne dans .gitignore en indiquant leurs chemins complets.
+
+# Pour éviter des commits superflus tout en sauvegardant ses modifications, on peut les mettre de coté avec:
+git stash
+
+# Récupérer les modifications que vous aviez mises de côté avec la commande:
+git stash pop 
+
+[ 
+  Attention, pop vide votre stash des modifications que vous aviez rangées dedans. Donc une fois que vous avez récupéré ces modifications 
+  dans votre branche, il vous faut finir votre tâche et les committer ! (ou bien les remettre de côté en exécutant à nouveau la commande git stash).
+
+  Si vous voulez garder les modifications dans votre stash, vous pouvez utiliser apply à la place de pop : 
+  git stash apply
+]
+
+# 
