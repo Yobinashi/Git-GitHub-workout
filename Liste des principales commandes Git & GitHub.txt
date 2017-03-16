@@ -90,4 +90,5 @@ git stash pop
   git stash apply
 ]
 
-# 
+#  Pour proposer une modification à un projet hébergé sur GitHub, faire un pull request (PR).
+cf. Chapitre 3 - séance 7 - Contribuez à des projets open source.
