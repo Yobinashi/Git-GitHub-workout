@@ -1,4 +1,4 @@
-# TD-openclassroom
+# Activité finale - Openclassrooms
 Entrainement au maniement de Git et GitHub
 
 
